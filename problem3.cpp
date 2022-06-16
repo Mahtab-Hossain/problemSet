@@ -1,6 +1,7 @@
 #include <iostream>
 
 using namespace std;
+//git remote set-url origin https://<githubtoken>@github.com/<username>/<repositoryname>.git
 
 int main(){
     int val;
