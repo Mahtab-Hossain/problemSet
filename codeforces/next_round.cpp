@@ -2,20 +2,19 @@
 using namespace std;
 
 int main(){
-    int n,k;
+    int n,k,a,b;
     cin >>n>>k;
-    int a;
     for(int i=0;i<k;++i)
     {
         if(cin>>a && a==0){
             cout<<i<<endl;
-        
+            return 0;
         }
     }
-    int b;
     for(int i=k;i<n;++i){
         if(cin>>b && b != a){
             cout<<i<<endl;
+            return 0;
         }
     }
     cout<<n<<endl;
