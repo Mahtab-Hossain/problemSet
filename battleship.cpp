@@ -18,10 +18,21 @@ int main(){
         cin>>row;
         cout<<"choose a column number between 0 and 2";
         cin>>col;
-        
-    }
-    
 
+    if (ship[row][col])
+    {
+        ship[row][col]=0;
+        hits++;
+        cout<<"hit!!!"<<(3-hits)<<" left.\n\n";
+    }
+    else{ 
+        cout<<"MISS\n\n";
+    }
+    numberOfTurns++;
+
+    }
+    cout<<"victory: \n";
+    cout<<"you won in "<<numberOfTurns<<"turns";
 
 
 }
