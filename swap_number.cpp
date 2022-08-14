@@ -10,8 +10,9 @@ int main(){
     int number_1,number_2;
     cin>>number_1>>number_2;
     cout<<"before swap: ";
+    cout<<number_1<<" "<<number_2;
     swap_numbers(number_1,number_2);
     cout<<"after swap: ";
-    cout<<number_1<<number_2;
+    cout<<number_1<<" "<<number_2;
     return 0;
 }
