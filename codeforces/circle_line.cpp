@@ -12,6 +12,7 @@ int main(){
     if(s>t){
         swap(s,t);
     }
-    int dist
-
+    dist=f[t]-f[s];
+    cout<<min(dist,(f[n+1]-dist))<<endl;
+    return 0;
 }
