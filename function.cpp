@@ -1,12 +1,13 @@
 #include <iostream>
 using namespace std;
 
-void function_1(int x){
-    cin>>x;
-    cout<<x<<" "<<endl;
+int fun_2(int y){
+    return y*y;
 }
 int main(){
-    function_1(34);
+    cout<<fun_2(3);
+    //function_1(23);
+    
     return 0;
 
 }
