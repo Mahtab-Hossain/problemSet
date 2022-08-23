@@ -8,6 +8,6 @@ double addition(double number1, double number2){
 }
 //main function
 int main(){
-    cout<<addition(number1,number2);
+    cout<<addition(0,0);
     return 0;
 }
