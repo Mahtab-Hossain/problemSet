@@ -11,7 +11,7 @@ int addition(int number){
     }
 }
 int main(){
-    int result = addition(5);
+    int result = addition();
     cout<<result;
     return 0;
 }
