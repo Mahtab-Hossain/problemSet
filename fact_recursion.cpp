@@ -11,6 +11,6 @@ int factorial(int number){
     }
 }
 int main(){
-    cout<<factorial(6);
+    cout<<"Tha factorial of entered number is -"<<factorial(6);
     return 0;
 }
