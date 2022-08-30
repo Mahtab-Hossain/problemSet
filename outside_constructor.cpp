@@ -4,7 +4,7 @@ using namespace std;
 class fruit{
     public:
     fruit(int number1,int number2);
-    total_number(int x,int y){
+    void total_number(int x,int y){
         
     }
 };
