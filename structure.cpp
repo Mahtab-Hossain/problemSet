@@ -16,5 +16,5 @@ int main(){
     cout<<"enter phone";
     cin>>student[10].phone;
     cout<<s.name<<student[10].phone;
-    return 0
+    return 0;
 }
