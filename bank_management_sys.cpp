@@ -40,11 +40,33 @@ public:
 
     }
     void show_acc_dtl(){
-        
+
     }
 
 };
 class Transaction{
+public:
+    int id;
+    string details,date;
+public:
+    void update_transction(){
+
+    }
+    void debit_info(string info){
+
+    }
+    void procese_debit(){
+
+    }
+    void credit(string coll){
+
+    }
+    void credit_add(){
+
+    }
+    void credit_update(){
+        
+    }
 
 };
 
