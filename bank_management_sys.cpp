@@ -27,11 +27,21 @@ public:
         // return string;
     }
     void update_emp_data(){
-        
+
     }
 
 };
 class User{
+public:
+    string usr_name,usr_address;
+    long int usr_acc_no;
+public:
+    void withdraw_amount(){
+
+    }
+    void show_acc_dtl(){
+        
+    }
 
 };
 class Transaction{
