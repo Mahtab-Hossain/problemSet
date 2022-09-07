@@ -65,11 +65,17 @@ public:
 
     }
     void credit_update(){
-        
+
     }
 
 };
 
 int main(){
+    Admin adminClassObj;
+    Employee empClassObj;
+    Transaction trsClassObj;
+    User usrClassObj;
 
+
+    return 0;
 }
