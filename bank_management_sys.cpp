@@ -19,6 +19,13 @@ public:
 
 };
 class Employee{
+public:
+    char emp_name[10];
+    string emp_cerdenials;
+public:
+    void add_usr(){
+        // return string;
+    }
 
 };
 class User{
