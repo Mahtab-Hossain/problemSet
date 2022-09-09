@@ -5,14 +5,15 @@ using namespace std;
 
 
 int main(){
-    int size;
+    int size,a;
+    cout<<"insert size: ";
     cin>>size;
     int array[size];
-    for(int a=0;a==size;++size){
+    for(a=0;a<10;++size){
         cin>>array[a];
 
     }
-    cout<<"inserted value :";
+    cout<<"inserted value :"<<array[a];
     cout<<"sorted values"<<"\n";
     
 
