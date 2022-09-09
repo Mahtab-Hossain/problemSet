@@ -8,7 +8,12 @@ int main(){
     int size;
     cin>>size;
     int array[size];
-    cout<<"sorted values"<<"\n";
+    for(int a=0;a==size;++size){
+        cin>>array[a];
 
+    }
+    cout<<"inserted value :";
+    cout<<"sorted values"<<"\n";
+    
 
 }
