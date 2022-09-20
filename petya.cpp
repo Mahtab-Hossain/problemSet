@@ -15,4 +15,5 @@ void petya(){
 
 int main(){
     petya();
+    return 0;
 }
