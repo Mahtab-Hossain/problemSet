@@ -6,19 +6,22 @@ class Insertion_sort{
     public:
 
     void print_array(int arr[],int size){
-        int a;
-        cin>>size;
+        //int a;
+        //cin>>size;
         for(int a=0;a<size;a++){
-            cin>>arr[a];
+            //cin>>arr[a];
+            cout<<arr[a]<<" ";
         }
-        cout<<arr[a];
+        cout<<endl;
     }
     void insetion_sort(int arr[],int size){
+
         for(int step=1;step<size;step++){
             int key = arr[step];
             int j= step - 1;
             while(key<arr[j] && j>=0){
                 arr[j+1]=arr[j];
+                --j;
             }
             arr[j+1]=key;
         }
