@@ -38,12 +38,27 @@ void insertionSort(){
     cout<<"sorted array ";
     insert.print_array(num,size);
 }
+void selectionSort(){
+    cout<<"not written yet"<<endl;
+}
 
 int main(){
-    char algo;
-    cout<<"enter number to select algorithm :"<<" ";
+    int algo;
+    cout<<"Enter number to select algorithm :"<<endl;
+    cout<<"Enter 1 for Insertion sort :"<<endl;
+    cout<<"Enter 2 for selection sort :"<<endl;
     cin>>algo;
-
-    insertionSort();
+    switch (algo)
+    {
+    case 1:
+        insertionSort();
+        break;
+    case 2:
+        selectionSort();
+        break;
+    default:
+        cout<<"invalid key";
+        break;
+    }
     return 0;
 }
