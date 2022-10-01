@@ -146,6 +146,29 @@ void quickSort(){
     }
 }
 
+void bubbleSort(){
+    int numberOFelements,value;
+    vector<int>a;
+
+    cout<<"------Bubble sort------\n";
+    cout<<"Enter the number of elements: ";
+    cin>>numberOFelements;
+    cout<<"\n\tEnter your elements:\t";
+    for (int  i = 0; i < numberOFelements; i++)
+    {
+        cin>>value;
+        a.push_back(value);
+    }
+    Bubble_sort bubble;
+    bubble.bubble_sort(a);
+
+    cout<<"\tafter sorting:\t\t";
+        for(int i=0;i<=numberOFelements;i++){
+            cout<<a[i]<<" ";
+        }    
+
+}
+
 
 int main(){
     int algo;
@@ -153,6 +176,7 @@ int main(){
     cout<<"Enter 1 for Insertion sort :"<<endl;
     cout<<"Enter 2 for selection sort :"<<endl;
     cout<<"Enter 3 for quick Sort     :"<<endl;
+    cout<<"Enter 4 for bubble sort    :"<<endl;
     cin>>algo;
     switch (algo)
     {
@@ -164,6 +188,9 @@ int main(){
         break;
     case 3:
         quickSort();
+        break;
+    case 4:
+        bubbleSort();
         break;
     default:
         cout<<"invalid key";
