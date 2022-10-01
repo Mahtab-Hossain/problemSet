@@ -68,6 +68,19 @@ class Selection_sort{
 
 };
 
+class Quick_Sort{
+    public:
+
+    int quick_sort(int array[],int begin,int end){
+        int step=begin;
+        int pivot=array[begin];
+        int location;
+
+        
+
+    }
+};
+
 void insertionSort(){
     Insertion_sort insert;
     insert.insertion_sort();
