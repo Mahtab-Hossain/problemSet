@@ -5,42 +5,44 @@ class Insertion_sort{
 
     public:
 
-    void print_array(int arr[],int size){
-        //int a;
-        //cin>>size;
-        for(int a=0;a<size;a++){
-            //cin>>arr[a];
-            cout<<arr[a]<<" ";
-        }
-        cout<<endl;
-    }
-    void insetion_sort(int arr[],int size){
+    void insertion_sort(){
 
-        for(int step=1;step<size;step++){
-            int key = arr[step];
-            int j= step - 1;
-            while(key<arr[j] && j>=0){
-                arr[j+1]=arr[j];
-                --j;
+        int size,i,step,numberOfElements,key,arr[100];
+        cout<<"------Insertion sort------\n";
+        cout<<"Enter number of elements: ";
+        cin>>numberOfElements;
+        cout<<"\n\tEnter your elements: \n\t";
+        for(i=1;i<=numberOfElements;i++){
+            cin>>arr[i];
+        }
+        arr[0]=0;
+        for(size=2;size<=numberOfElements;size++){
+            key=arr[size];
+            step=size-1;
+            while(key<arr[step]){
+                arr[step+1]=arr[step];
+                --step;
             }
-            arr[j+1]=key;
+            arr[step+1]=key;
+        }
+        cout<<"after sorting:\t";
+        for(i=1;i<=numberOfElements;i++){
+            cout<<arr[i]<<endl;
         }
 
     }
-    
-};
-void insertionSort(){
-    int num[10]={1,4,3,2,5,7,9,8,10};
-    int size = sizeof(num)/ sizeof(num[0]);
-    Insertion_sort insert;
-    insert.insetion_sort(num,size);
+};   
 
-    cout<<"sorted array ";
-    insert.print_array(num,size);
+void insertionSort(){
+    //int num[10]={1,4,3,2,5,7,9,8,10};
+    //int size = sizeof(num)/ sizeof(num[0]);
+    //Insertion_sort insert;
+    //insert.insetion_sort(num,size);
+    //cout<<"sorted array ";
+    //insert.print_array(num,size);
 }
-void selectionSort(){
-    cout<<"not written yet"<<endl;
-}
+
+
 
 int main(){
     int algo;
@@ -54,7 +56,7 @@ int main(){
         insertionSort();
         break;
     case 2:
-        selectionSort();
+        //selectionSort();
         break;
     default:
         cout<<"invalid key";
