@@ -75,9 +75,22 @@ class Quick_Sort{
         int step=begin;
         int pivot=array[begin];
         int location;
-
-        
-
+        for(location=begin+1;location<=end;location++){
+            if(pivot > array[location]){
+                array[step]=array[location];
+                array[location]=array[step+1];
+                array[step+1]=pivot;
+                step++;
+            }
+        }
+        return step;
+    }
+    void qSort(int array[],int begin,int end){
+        if(begin < end){
+            int step=quick_sort(array,begin,end);
+            qSort(array,begin,step-1);
+            qSort(array,step+1,end);
+        }
     }
 };
 
@@ -89,6 +102,26 @@ void insertionSort(){
 void selectionSort(){
     Selection_sort select;
     select.selection_sort();
+}
+void quickSort(){
+    int array[100],i,numberOfelements,begin,end;
+    cout<<"------Quick sort------\n";
+    cout<<"\n\tEnter your elements:\t";
+    cin>>numberOfelements;
+    for(i=1;i<=numberOfelements;i++){
+        cin>>array[i];
+    }
+    begin=1;
+    end=numberOfelements;
+
+    Quick_Sort q;
+    q.qSort(array,begin,end);
+    
+    cout<<"\n\tafter sorting:\t\t";
+    for(i=1;i<=numberOfelements;i++){
+        cout<<array[i]<<" ";
+
+    }
 }
 
 
