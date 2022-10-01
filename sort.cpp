@@ -106,8 +106,9 @@ void selectionSort(){
 void quickSort(){
     int array[100],i,numberOfelements,begin,end;
     cout<<"------Quick sort------\n";
-    cout<<"\n\tEnter your elements:\t";
+    cout<<"Enter the number of elements: ";
     cin>>numberOfelements;
+    cout<<"\n\tEnter your elements:\t";
     for(i=1;i<=numberOfelements;i++){
         cin>>array[i];
     }
@@ -130,6 +131,7 @@ int main(){
     cout<<"Enter number to select algorithm :"<<endl;
     cout<<"Enter 1 for Insertion sort :"<<endl;
     cout<<"Enter 2 for selection sort :"<<endl;
+    cout<<"Enter 3 for quick Sort     :"<<endl;
     cin>>algo;
     switch (algo)
     {
@@ -138,6 +140,9 @@ int main(){
         break;
     case 2:
         selectionSort();
+        break;
+    case 3:
+        quickSort();
         break;
     default:
         cout<<"invalid key";
