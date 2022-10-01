@@ -99,8 +99,21 @@ class Quick_Sort{
 class Bubble_sort{
     public:
 
-    void bubble_sort();
+    void bubble_sort(vector<int> &a){
+        int i,j,size,k,swap;
+
+        for(i=a.size();i>0;i++){
+            for(j=0,k=1;k<i;j++,k++){
+                if(a[j]>a[k]){
+                    swap=a[j];
+                    a[j]=a[k];
+                    a[k]=swap;
+                }
+            }
+        }
+    }
 };
+
 
 void insertionSort(){
     Insertion_sort insert;
