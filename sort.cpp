@@ -11,7 +11,7 @@ class Insertion_sort{
         cout<<"------Insertion sort------\n";
         cout<<"Enter number of elements: ";
         cin>>numberOfElements;
-        cout<<"\n\tEnter your elements: \n\t";
+        cout<<"\n\tEnter your elements:\t";
         for(i=1;i<=numberOfElements;i++){
             cin>>arr[i];
         }
@@ -25,23 +25,58 @@ class Insertion_sort{
             }
             arr[step+1]=key;
         }
-        cout<<"after sorting:\t";
+        cout<<"\tafter sorting:\t\t";
         for(i=1;i<=numberOfElements;i++){
-            cout<<arr[i]<<endl;
+            cout<<arr[i]<<" ";
         }
 
     }
 };   
 
+class Selection_sort{
+    
+    public:
+
+    void selection_sort(){
+        int i,numberOFelements,step,size,minimun,location,key,array[100];
+        cout<<"------Selection Sort------\n";
+        cout<<"Enter the number of elements: ";
+        cin>>numberOFelements;
+        cout<<"\n\tEnter your elements:\t";
+        for(i=1;i<=numberOFelements;i++){
+            cin>>array[i];
+        }
+        for(step=1;step<=numberOFelements;step++){
+            minimun=array[step];
+            location=step;
+
+            for(int j=step+1;j<=numberOFelements;j++){
+                if(minimun>array[j]){
+                    minimun=array[j];
+                    location=j;
+                }
+            }
+            key=array[step];
+            array[step]=array[location];
+            array[location]=key;
+        }
+        cout<<"\tafter sorting:\t\t";
+        for(i=1;i<=numberOFelements;i++){
+            cout<<array[i]<<" ";
+        }
+    }
+
+};
+
 void insertionSort(){
-    //int num[10]={1,4,3,2,5,7,9,8,10};
-    //int size = sizeof(num)/ sizeof(num[0]);
-    //Insertion_sort insert;
-    //insert.insetion_sort(num,size);
-    //cout<<"sorted array ";
-    //insert.print_array(num,size);
+    Insertion_sort insert;
+    insert.insertion_sort();
 }
 
+void selectionSort(){
+    Selection_sort select;
+    select.selection_sort();
+}
 
 
 int main(){
@@ -56,7 +91,7 @@ int main(){
         insertionSort();
         break;
     case 2:
-        //selectionSort();
+        selectionSort();
         break;
     default:
         cout<<"invalid key";
