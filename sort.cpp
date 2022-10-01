@@ -1,4 +1,6 @@
 #include <iostream>
+#include <vector>
+
 using namespace std;
 
 class Insertion_sort{
@@ -92,6 +94,12 @@ class Quick_Sort{
             qSort(array,step+1,end);
         }
     }
+};
+
+class Bubble_sort{
+    public:
+
+    void bubble_sort();
 };
 
 void insertionSort(){
