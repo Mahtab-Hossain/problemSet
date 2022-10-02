@@ -114,6 +114,19 @@ class Bubble_sort{
     }
 };
 
+class DepthFirstSearch{
+    
+    public:
+
+    void dfs(){
+
+    }
+};
+
+void depthFirstSearch(){
+    DepthFirstSearch d;
+    d.dfs();
+}
 
 void insertionSort(){
     Insertion_sort insert;
