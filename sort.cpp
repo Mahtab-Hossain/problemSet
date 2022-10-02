@@ -226,6 +226,7 @@ int main(){
     cout<<"Enter 2 for selection sort :"<<endl;
     cout<<"Enter 3 for quick Sort     :"<<endl;
     cout<<"Enter 4 for bubble sort    :"<<endl;
+    cout<<"Enter 5 for DFS            :"<<endl;
     cin>>algo;
     switch (algo)
     {
@@ -240,6 +241,9 @@ int main(){
         break;
     case 4:
         bubbleSort();
+        break;
+    case 5:
+        depthFirstSearch();
         break;
     default:
         cout<<"invalid key";
