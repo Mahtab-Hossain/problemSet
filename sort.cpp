@@ -119,6 +119,42 @@ class DepthFirstSearch{
     public:
 
     void dfs(){
+        int cost[100][100],stack[100],visited[100],visit[100],i,j,v,k,vertex,root,edge;
+        cout<<"------Depth First Search------";
+        cout<<"\n\tEnter the number's of Vertex:\t";
+        cin>>vertex;
+        cout<<"\n\tEnter the number's of edge:\t";
+        cin>>edge;
+
+        cout<<"\n\tEdges\n\t";
+        for(k=1;k<=edge;k++){
+            cin>>i>>j;
+            cost[i][j]=1;
+        }
+
+        cout<<"\nEnter Initial Vertex: ";
+        cin>>v;
+        cout<<"\n\tOrder of visited nodes is :\t";
+        cout<<v<<" ";
+
+        visited[v]=1;
+        k=1;
+
+        while( k < vertex){
+            for(j = vertex; j>=1; j--){
+                if(cost[v][j] != 0 && visited[j] != 1 && visit[j] != 1){
+                    visit[j]=1;
+                    stack[root]=j;
+                    root++;
+                }
+            }
+            v= stack[-root];
+            cout<<v<<" ";
+            k++;
+            visit[v]=0;
+            visited[v]=1;        
+
+        }
 
     }
 };
