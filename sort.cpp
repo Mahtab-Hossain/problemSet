@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <string>
 
 using namespace std;
 
@@ -218,6 +219,24 @@ void bubbleSort(){
 
 }
 
+class PrimeNumber{
+
+    public:
+
+    void primeNumber(){
+        int number,cout=0;
+        //cout<<""<<endl;
+        cin>>number;
+        if(cout==2){
+            //cout<<"Its prime\n";
+        }
+    }
+};
+
+void prime_number(){
+    PrimeNumber prime;
+    prime.primeNumber();
+}
 
 int main(){
     int algo;
