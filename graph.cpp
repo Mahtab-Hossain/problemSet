@@ -31,6 +31,32 @@ void Breath_First_Search::add_edge(int source, int destination){
 
 }
 
+void Breath_First_Search::bfs(int startVertex){
+
+    list<int> queue;
+
+    visited = new bool [numberOfVertices];
+    for(int i=0;i< numberOfVertices;i++){
+        visited[i]=false;
+    }
+
+    list<int>::iterator i;
+    
+    while(!queue.empty()){
+        int newVertex = queue.front();
+        cout<<"visited: "<<newVertex<<" ";
+        queue.pop_front();
+
+        for(i=add_list[newVertex].begin();i != add_list[newVertex].end();++i){
+            int add_vertex =*i;
+            if(!visited[add_vertex]){
+                visited[add_vertex]=true;
+                queue.push_back(add_vertex);
+            }
+        }
+    }
+
+}
 
 
 
