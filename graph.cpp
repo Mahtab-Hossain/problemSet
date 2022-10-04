@@ -1,5 +1,7 @@
 #include <iostream>
 #include <list>
+#include <limits.h>
+#define V 9
 
 using namespace std;
 
@@ -58,20 +60,40 @@ void Breath_First_Search::bfs(int startVertex){
 
 }
 
+class Dijsktra{
+    public:
+    int minimumDistance(int[],bool shortPath[]){
+        
+
+        int v,min = INT_MAX, min_index;
+        for(v=0;v<V;v++){
+            if(shortPath[v]==false && minimumDistance[v] <= min){
+                min= minimumDistance[v],min_index=v;
+            }
+        }
 
 
+        return min_index;
+    }
+
+
+};
+
+void dijsktra(){
+    
+}
 
 int main(){
 
-    Breath_First_Search g(4);
-    g.add_edge(0,1);
-    g.add_edge(0,2);
-    g.add_edge(1,2);
-    g.add_edge(2,0);
-    g.add_edge(2,3);
-    g.add_edge(3,3);
+    // Breath_First_Search g(4);
+    // g.add_edge(0,1);
+    // g.add_edge(0,2);
+    // g.add_edge(1,2);
+    // g.add_edge(2,0);
+    // g.add_edge(2,3);
+    // g.add_edge(3,3);
     
-    g.bfs(2);
+    // g.bfs(2);
 
     return 0;
 }
