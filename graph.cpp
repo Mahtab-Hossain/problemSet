@@ -3,7 +3,7 @@
 
 using namespace std;
 
-class Breath_First_search{
+class Breath_First_Search{
 
     public:
 
@@ -13,12 +13,24 @@ class Breath_First_search{
     
     public:
 
-    Breath_First_search(int vertices);
+    Breath_First_Search(int vertices);
+
         void add_edge(int source, int destination);
         void bfs(int startVertex);
-        
+    //Breath_First_search(int vertices){
 
 };
+
+Breath_First_Search::Breath_First_Search(int vertices){
+    numberOfVertices =vertices;
+    add_list = new list <int> [vertices];
+}
+void Breath_First_Search::add_edge(int source, int destination){
+    add_list[source].push_back(destination);
+    add_list[destination].push_back(source);
+
+}
+
 
 
 
