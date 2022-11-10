@@ -13,6 +13,15 @@ int random_number(int s, int e){
     random_n=s+(rand()%range);
     return random_n;
 }
+//the below function is used for metaphorical mutation
+
+char mutation(){
+    int length,rand;
+    length=GENES.size();
+    rand=random_number(0,length-1);
+    return GENES[rand];
+}
+
 
 int main(){
 
