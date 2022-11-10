@@ -44,6 +44,12 @@ class Single{
 
 };
 
+Single::Single(string chromosom){
+    
+    this->chromosom = chromosom;
+    fitness = cal_fitness();
+};
+
 int main(){
 
     
