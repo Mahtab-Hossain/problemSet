@@ -50,8 +50,8 @@ Single::Single(string chromosom){
     fitness = cal_fitness();
 };
 
-Single Single::mate(Single par2){
-    string infant = " ";
+Single Single::mate(Single parent_2){
+    string infant = "";
     int length,i;
     length = chromosom.size();
     for(i = 0;i<length;i++){
@@ -62,14 +62,25 @@ Single Single::mate(Single par2){
             infant += infant[i];
         }
         else if(p<0.90){
-            infant += par2.chromosom[i];
+            infant += parent_2.chromosom[i];
         }
         else{
             infant += mutation();
         }
     }
-    Single(infant);
+    return Single(infant);
 };
+
+int Single::cal_fitness(){
+    int length,fitness=0,i;
+    length=AIM.size();
+    for(i=0;i<length;i++){}
+    if(chromose[i] != AIM[i]){
+        fitness++
+    }
+    return fitness;
+
+}
 
 int main(){
 
