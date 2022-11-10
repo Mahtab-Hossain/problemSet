@@ -89,6 +89,18 @@ bool operator<(const Single &sing1,const Single &sing2){
 
 
 int main(){
+    srand((unsigned)(time(0)));
+    int generation=0;
+    
+    vector<Single> population;
+    bool found = false;
+    for(int i = 0;i< POPULATION;i++){
+        string gnome = gnome();
+        population.push_back(Single(gnome));
+    }
+    while(! found){
+        sort(population.begin(),population.end());
 
+    }
     
 }
