@@ -22,6 +22,19 @@ char mutation(){
     return GENES[rand];
 }
 
+//string of genes function
+
+string gnome(){
+    int length,i;
+    string gnome = " ";
+    length = AIM.size();
+    for ( i = 0; i < length; i++)
+    {
+        gnome += mutation();
+        
+    }
+    return gnome;
+}
 
 int main(){
 
