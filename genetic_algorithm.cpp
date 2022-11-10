@@ -35,6 +35,14 @@ string gnome(){
     }
     return gnome;
 }
+class Single{
+    public:
+    string chromosom;
+    int fitness, cal_fitness();
+    Single(string chromosom);
+    Single mate(Single paraent_2);
+
+};
 
 int main(){
 
