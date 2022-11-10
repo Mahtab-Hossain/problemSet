@@ -50,6 +50,27 @@ Single::Single(string chromosom){
     fitness = cal_fitness();
 };
 
+Single Single::mate(Single par2){
+    string infant = " ";
+    int length,i;
+    length = chromosom.size();
+    for(i = 0;i<length;i++){
+        //here p = probability
+        float p = random_number(0,100)/100;
+
+        if(p<0.45){
+            infant += infant[i];
+        }
+        else if(p<0.90){
+            infant += par2.chromosom[i];
+        }
+        else{
+            infant += mutation();
+        }
+    }
+    Single(infant);
+};
+
 int main(){
 
     
