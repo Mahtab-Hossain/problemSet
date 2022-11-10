@@ -75,12 +75,18 @@ int Single::cal_fitness(){
     int length,fitness=0,i;
     length=AIM.size();
     for(i=0;i<length;i++){}
-    if(chromose[i] != AIM[i]){
-        fitness++
+    if(chromosom[i] != AIM[i]){
+        fitness++;
     }
     return fitness;
 
 }
+//overloading function
+
+bool operator<(const Single &sing1,const Single &sing2){
+    return sing1.fitness <sing2.fitness;
+}
+
 
 int main(){
 
