@@ -123,8 +123,14 @@ int main(){
 
         }
         population = new_gen;
-        cout<<"Generation: "<<
-        
+        cout<<"Generation: "<<generation<<"\t";
+        cout<<"String: "<<population[0].chromosom<<"\t";
+        cout<<"Fitness: "<<population[0].fitness<<"\n";
+        generation++;
     }
+    
+    cout<< "Generation: " << generation << "\t";
+    cout<< "String: "<< population[0].chromosom <<"\t";
+    cout<< "Fitness: "<< population[0].fitness << "\n";
     
 }
