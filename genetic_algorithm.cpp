@@ -24,7 +24,7 @@ char mutation(){
 
 //string of genes function
 
-string gnome(){
+string make_gnome(){
     int length,i;
     string gnome = " ";
     length = AIM.size();
@@ -100,6 +100,10 @@ int main(){
     }
     while(! found){
         sort(population.begin(),population.end());
+        if(population[0].fitness<=0){
+            found = true;
+            break;
+        }
 
     }
     
