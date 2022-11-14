@@ -1,9 +1,7 @@
 #include <bits/stdc++.h>
-#define POPULATION 100
-
 using namespace std;
-
-const string GENES = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ 1234567890, .-;:_!#%&/()=?@${[]}";
+#define POPULATION 100
+const string GENES = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ 1234567890, .-;:_!\"#%&/()=?@${[]}";
 
 const string AIM = "first evaluation";
 //here s = start and e = end
@@ -26,7 +24,7 @@ char mutation(){
 
 string make_gnome(){
     int length,i;
-    string gnome = " ";
+    string gnome = "";
     length = AIM.size();
     for ( i = 0; i < length; i++)
     {
@@ -40,7 +38,7 @@ class Single{
     string chromosom;
     int fitness, cal_fitness();
     Single(string chromosom);
-    Single mate(Single paraent_2);
+    Single mate(Single parent_2);
 
 };
 
@@ -50,7 +48,7 @@ Single::Single(string chromosom){
     fitness = cal_fitness();
 };
 
-Single Single::mate(Single parent_2){
+Single Single::mate(Single par_2){
     string infant = "";
     int length,i;
     length = chromosom.size();
@@ -62,7 +60,7 @@ Single Single::mate(Single parent_2){
             infant += infant[i];
         }
         else if(p<0.90){
-            infant += parent_2.chromosom[i];
+            infant += par_2.chromosom[i];
         }
         else{
             infant += mutation();
@@ -117,8 +115,8 @@ int main(){
             Single parent1 = population[r];
             
             r = random_number(0,50);
-            Single parent2 = population[r];
-            Single offSpring = parent1.mate(parent2);
+            Single parent_2 = population[r];
+            Single offSpring = parent1.mate(parent_2);
             new_gen.push_back(offSpring);
 
         }
