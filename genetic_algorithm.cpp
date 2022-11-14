@@ -95,7 +95,7 @@ int main(){
     vector<Single> population;
     bool found = false;
     for(int i = 0;i< POPULATION;i++){
-        string gnome = gnome();
+        string gnome = make_gnome();
         population.push_back(Single(gnome));
     }
     while(! found){
@@ -104,7 +104,27 @@ int main(){
             found = true;
             break;
         }
+        vector<Single> new_gen;
+        int s = (10*POPULATION)/100;
+        for(int i=0;i<s;i++){
+            new_gen.push_back(population[i]);
+        }
+        s = (90*POPULATION)/100;
+        for (int i = 0; i < s; i++)
+        {
+            int r,len = population.size();
+            r=random_number(0,50);
+            Single parent1 = population[r];
+            
+            r = random_number(0,50);
+            Single parent2 = population[r];
+            Single offSpring = parent1.mate(parent2);
+            new_gen.push_back(offSpring);
 
+        }
+        population = new_gen;
+        cout<<"Generation: "<<
+        
     }
     
 }
