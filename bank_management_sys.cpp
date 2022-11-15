@@ -101,12 +101,24 @@ class Bank_acc
 
 };
 
+void Bank_acc::Update(){
+    cout<<"\tBank Account NO: "<<acc_no;
+    cout<<"\n\tUpadate Account Holder Name: ";
+    cin.getline(name,50);
+    cout<<"\n\tUpdate Account Type: ";
+    cin>>type;
+    type=toupper(type);
+    cout<<"\n\tUpdate Total Balance: ";
+    cin>>deposit;
+
+};
+
 
 int main(){
-    Admin adminClassObj;
-    Employee empClassObj;
-    Transaction trsClassObj;
-    User usrClassObj;
+    //Admin adminClassObj;
+    //Employee empClassObj;
+    //Transaction trsClassObj;
+    //User usrClassObj;
 
 
     return 0;
