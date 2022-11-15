@@ -146,6 +146,11 @@ char Bank_acc::return_type() const{
     return type;
 };
 
+void Bank_acc::report() const
+{
+    
+}
+
 int main(){
     //Admin adminClassObj;
     //Employee empClassObj;
