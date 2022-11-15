@@ -149,6 +149,11 @@ char Bank_acc::return_type() const{
 void Bank_acc::report() const
 {
     cout<<acc_no<<setw(10)<<" "<<name<<setw(10)<<" "<<type<<setw(10)<<deposit<<endl;
+
+}
+
+void Bank_acc::depo()
+{
     
 }
 
