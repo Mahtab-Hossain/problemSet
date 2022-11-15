@@ -142,7 +142,9 @@ int Bank_acc::return_accNo() const{
     return acc_no;
 };
 
-
+char Bank_acc::return_type() const{
+    return type;
+};
 
 int main(){
     //Admin adminClassObj;
