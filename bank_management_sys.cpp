@@ -152,9 +152,9 @@ void Bank_acc::report() const
 
 }
 
-void Bank_acc::depo()
+void Bank_acc::depo(int a)
 {
-    
+    deposit = deposit + a;
 }
 
 int main(){
