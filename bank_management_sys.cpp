@@ -156,6 +156,14 @@ void Bank_acc::depo(int a)
 {
     deposit = deposit + a;
 }
+void Bank_acc::withDraw(int a){
+
+};
+
+int Bank_acc::return_deposit() const
+{
+
+};
 
 int main(){
     //Admin adminClassObj;
