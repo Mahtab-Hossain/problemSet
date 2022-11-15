@@ -138,6 +138,12 @@ void Bank_acc::Display_acc() const{
 
 };
 
+int Bank_acc::return_accNo() const{
+    return acc_no;
+};
+
+
+
 int main(){
     //Admin adminClassObj;
     //Employee empClassObj;
