@@ -157,12 +157,12 @@ void Bank_acc::depo(int a)
     deposit = deposit + a;
 }
 void Bank_acc::withDraw(int a){
-
+    deposit = deposit + a;
 };
 
 int Bank_acc::return_deposit() const
 {
-
+    return deposit;
 };
 
 int main(){
