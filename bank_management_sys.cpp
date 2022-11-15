@@ -76,16 +76,24 @@ public:
 class Bank_acc
 {
     private:
+    
     int deposit,acc_no;
     char type,name[100];
+    
     public:
-
+    //report function
     void report() const;
+    //account createion function
     void create_acc();
+    //money deposit function
     void depo(int);
+    //account info display function
     void Display_acc() const;
+    //account information function
     void Update();
-    void draw(int);
+    //money withdrawal function
+    void withDraw(int);
+    //deposit return function
     int return_deposit() const;
     int return_accNo() const;
     char return_type() const;
