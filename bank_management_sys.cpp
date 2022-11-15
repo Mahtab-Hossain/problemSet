@@ -113,6 +113,30 @@ void Bank_acc::Update(){
 
 };
 
+void Bank_acc::create_acc(){
+    system("CLS");
+    cout<<"\n\tEnter Account Number: ";
+    cin>>acc_no;
+    cout<<"\n\tEnter account holder name: ";
+    cin.ignore();
+    cin.getline(name,50);
+    cout<<"\n\tEnter the type of account: ";
+    cin>>type;
+    type=toupper(type);
+    cout<<"\n\tEnter total ammount: ";
+    cin>>deposit;
+    
+    cout<<"\n\tAccount Created Successfully!!";
+
+};
+
+void Bank_acc::Display_acc() const{
+    cout<<"\tAccount NO: "<<acc_no;
+    cout<<"\n\tAccount Owner's Name: "<<name;
+    cout<<"\n\tAccount Type: "<<type;
+    cout<<"\n\tTotal ammount in the account: "<<deposit;
+
+};
 
 int main(){
     //Admin adminClassObj;
