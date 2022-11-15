@@ -1,5 +1,8 @@
 #include <iostream>
 #include <fstream>
+#include <cctype>
+#include <iomanip>
+
 
 using namespace std;
 
@@ -69,6 +72,27 @@ public:
     }
 
 };
+
+class Bank_acc
+{
+    private:
+    int deposit,acc_no;
+    char type,name[100];
+    public:
+
+    void report() const;
+    void create_acc();
+    void depo(int);
+    void Display_acc() const;
+    void Update();
+    void draw(int);
+    int return_deposit() const;
+    int return_accNo() const;
+    char return_type() const;
+
+
+};
+
 
 int main(){
     Admin adminClassObj;
