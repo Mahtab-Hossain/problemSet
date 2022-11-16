@@ -177,7 +177,25 @@ int main(){
     //Employee empClassObj;
     //Transaction trsClassObj;
     //User usrClassObj;
+    char ch;
+    int number;
+    //loop start
 
+    system("CLS");
+    cout<<"\n\t\t............";
+    cout<<"\t\tBank management System";
+    cout<<"\n\t\t............";
+    cout<<"\t\t\tMain Menu \n";
+    cout<<"\n\t\t1. Create new account";
+	cout<<"\n\t\t2. Amount";
+	cout<<"\n\t\t3. WITHDRAW Amount";
+	cout<<"\n\t\t4. Balance Info";
+	cout<<"\n\t\t5. All account holder name";
+	cout<<"\n\t\t6. Select a account";
+	cout<<"\n\t\t7. Updatet a account";
+	cout<<"\n\t\t8. exit";
+	cout<<"\n\n\t\tSelect option 1-8 : ";
+	cin>>ch;
 
     return 0;
 }
