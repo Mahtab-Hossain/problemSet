@@ -180,7 +180,7 @@ int main(){
     char ch;
     int number;
     //loop start
-
+    do{
     system("CLS");
     cout<<"\n\t\t............";
     cout<<"\t\tBank management System";
@@ -197,5 +197,51 @@ int main(){
 	cout<<"\n\n\t\tSelect option 1-8 : ";
 	cin>>ch;
 
+    switch (ch)
+    {
+    case '1':
+        create_bank_acc();
+        break;
+    case '2':
+        system("CLS");
+        cout<<"\n\tEnter account no: "<<number;
+        money_depo_withdraw(number,1);
+        break;
+    case '3':
+        system("CLS");
+        cout<<"\n\tEnter account no: "<<number;
+        money_depo_withdraw(number,2);
+        break;
+    case '4':
+        system("CLS");
+        cout<<"\n\tEnter account no: "<<number;
+        display_slip(number);
+        break;
+    case '5':
+        display_all();
+        break;
+    case '6':
+        system("CLS");
+        cout<<"\n\tEnter account no: "<<number;
+        rm_bank_acc(number);
+        break;
+    case '7':
+        system("CLS");
+        cout<<"\n\tEnter account no: "<<number;
+        update_bank_acc(number);
+    case '8':
+        system("CLS"):
+        cout<<"\n\tEnjoy";
+        break;
+    default:
+        cout<<"\a";
+        break;
+    }
+    cin.ignore()
+    cin.get();
+
+    }
+    while(ch!='8');
+    //loop end
     return 0;
 }
