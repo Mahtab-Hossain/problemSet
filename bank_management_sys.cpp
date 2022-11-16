@@ -165,6 +165,13 @@ int Bank_acc::return_deposit() const
     return deposit;
 };
 
+void create_bank_acc();
+void display_slip(int);
+void display_all();
+void rm_bank_acc(int);
+void money_depo_withdraw(int,int);
+void update_bank_acc(int);
+
 int main(){
     //Admin adminClassObj;
     //Employee empClassObj;
