@@ -230,14 +230,14 @@ int main(){
         cout<<"\n\tEnter account no: "<<number;
         update_bank_acc(number);
     case '8':
-        system("CLS"):
+        system("CLS");
         cout<<"\n\tEnjoy";
         break;
     default:
         cout<<"\a";
         break;
     }
-    cin.ignore()
+    cin.ignore();
     cin.get();
 
     }
