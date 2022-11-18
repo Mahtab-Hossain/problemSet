@@ -283,3 +283,26 @@ void rm_bank_acc(int n){
     rename("Temp.dat","Bank_acc.dat");
     cout<<"\n\nRecord Removed";
 }
+
+void display_slip(int n){
+    Bank_acc acc;
+    bool flag = false;
+    ifstream infile;
+    infile.open("Bank_acc.dat",ios::binary);
+    if(!infile){
+        cout<<"file could't be opend";
+        return;
+    }
+    cout<<"\n\tBalance info....";
+    while(infile.read(reinterpret_cast<char *> (&acc),sizeof(Bank_acc)))
+    {
+        if(acc.return_accNo() == n){
+            acc.Display_acc();
+            flag = true;
+        }
+    }
+    infile.close();
+    if(flag ==false){
+        cout<<"\n\n\tBank account number does not exist";
+    }
+}
