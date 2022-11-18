@@ -261,5 +261,25 @@ void create_bank_acc(){
 
 void rm_bank_acc(int n){
     Bank_acc acc;
-    
+    ifstream infile;
+    ofstream outfile;
+    infile.open("Bank_acc.dat",ios::binary);
+    if(!infile){
+        cout<<"File couldn't be open...press any key";
+        return;
+    }
+    outfile.open("Temp.dat",ios::binary);
+    infile.seekg(0,ios::beg);
+    while(infile.read(reinterpret_cast<char *>(&acc),sizeof(Bank_acc)))
+    {
+        if(acc.return_accNo() != n){
+            outfile.write(reinterpret_cast<char *>(&acc),sizeof(Bank_acc));
+        }
+    }
+    infile.close();
+    outfile.close();
+
+    remove("Bank_acc.dat");
+    rename("Temp.dat","Bank_acc.dat");
+    cout<<"\n\nRecord Removed";
 }
