@@ -165,12 +165,15 @@ int Bank_acc::return_deposit() const
     return deposit;
 };
 
+
 void create_bank_acc();
 void display_slip(int);
 void display_all();
 void rm_bank_acc(int);
 void money_depo_withdraw(int,int);
 void update_bank_acc(int);
+
+
 
 int main(){
     //Admin adminClassObj;
@@ -244,4 +247,9 @@ int main(){
     while(ch!='8');
     //loop end
     return 0;
+}
+
+void create_bank_acc(){
+    Bank_acc acc;
+    
 }
