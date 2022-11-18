@@ -251,5 +251,10 @@ int main(){
 
 void create_bank_acc(){
     Bank_acc acc;
-    
+    ofstream outfile;
+
+    outfile.open("Bank_acc.dat",ios::binary|ios::app);
+    acc.create_acc();
+    outfile.write(reinterpret_cast<char *>(&acc),sizeof(Bank_acc));
+    outfile.close();
 }
