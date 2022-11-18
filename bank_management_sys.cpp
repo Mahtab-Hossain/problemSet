@@ -258,3 +258,8 @@ void create_bank_acc(){
     outfile.write(reinterpret_cast<char *>(&acc),sizeof(Bank_acc));
     outfile.close();
 }
+
+void rm_bank_acc(int n){
+    Bank_acc acc;
+    
+}
