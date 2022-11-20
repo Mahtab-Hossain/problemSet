@@ -258,10 +258,21 @@ void update_bank_acc(int n){
     }
     while(!file.eof()&&found==false){
         file.read(reinterpret_cast<char *>(&acc),sizeof(Bank_acc));
-        if(acc.return_accNo==n)
+        if(acc.return_accNo()==n)
         {
             acc.Display_acc();
-            cout<<"\n\n\tenter the new details of the "
+            cout<<"\n\n\tenter the new details of the bnak accout"<<endl;
+            acc.Update();
+            int pos;
+            pos=(-1)*static_cast<int>(sizeof(Bank_acc));
+            file.seekp(pos,ios::cur);
+            file.write(reinterpret_cast<char *>(&acc),sizeof(Bank_acc));
+            cout<<"\n\n\tRecord Updated";
+            found = true;
+        }
+        file.close();
+        if(found==false){
+            cout<<"\n\n\trecord not found";
         }
     }
 }
