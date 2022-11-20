@@ -166,10 +166,66 @@ int Bank_acc::return_deposit() const
 };
 
 
-void create_bank_acc();
+void create_bank_acc(){
+    Bank_acc acc;
+    ofstream outfile;
+
+    outfile.open("Bank_acc.dat",ios::binary|ios::app);
+    acc.create_acc();
+    outfile.write(reinterpret_cast<char *>(&acc),sizeof(Bank_acc));
+    outfile.close();
+}
 void display_slip(int);
 void display_all();
-void rm_bank_acc(int);
+
+void display_slip(int n){
+    Bank_acc acc;
+    bool flag = false;
+    ifstream infile;
+    infile.open("Bank_acc.dat",ios::binary);
+    if(!infile){
+        cout<<"file could't be opend";
+        return;
+    }
+    cout<<"\n\tBalance info....";
+    while(infile.read(reinterpret_cast<char *> (&acc),sizeof(Bank_acc)))
+    {
+        if(acc.return_accNo() == n){
+            acc.Display_acc();
+            flag = true;
+        }
+    }
+    infile.close();
+    if(flag ==false){
+        cout<<"\n\n\tBank account number does not exist";
+    }
+}
+
+void rm_bank_acc(int n){
+    Bank_acc acc;
+    ifstream infile;
+    ofstream outfile;
+    infile.open("Bank_acc.dat",ios::binary);
+    if(!infile){
+        cout<<"File couldn't be open...press any key";
+        return;
+    }
+    outfile.open("Temp.dat",ios::binary);
+    infile.seekg(0,ios::beg);
+    while(infile.read(reinterpret_cast<char *>(&acc),sizeof(Bank_acc)))
+    {
+        if(acc.return_accNo() != n){
+            outfile.write(reinterpret_cast<char *>(&acc),sizeof(Bank_acc));
+        }
+    }
+    infile.close();
+    outfile.close();
+
+    remove("Bank_acc.dat");
+    rename("Temp.dat","Bank_acc.dat");
+    cout<<"\n\nRecord Removed";
+}
+
 void money_depo_withdraw(int,int);
 void update_bank_acc(int);
 
@@ -249,60 +305,7 @@ int main(){
     return 0;
 }
 
-void create_bank_acc(){
-    Bank_acc acc;
-    ofstream outfile;
 
-    outfile.open("Bank_acc.dat",ios::binary|ios::app);
-    acc.create_acc();
-    outfile.write(reinterpret_cast<char *>(&acc),sizeof(Bank_acc));
-    outfile.close();
-}
 
-void rm_bank_acc(int n){
-    Bank_acc acc;
-    ifstream infile;
-    ofstream outfile;
-    infile.open("Bank_acc.dat",ios::binary);
-    if(!infile){
-        cout<<"File couldn't be open...press any key";
-        return;
-    }
-    outfile.open("Temp.dat",ios::binary);
-    infile.seekg(0,ios::beg);
-    while(infile.read(reinterpret_cast<char *>(&acc),sizeof(Bank_acc)))
-    {
-        if(acc.return_accNo() != n){
-            outfile.write(reinterpret_cast<char *>(&acc),sizeof(Bank_acc));
-        }
-    }
-    infile.close();
-    outfile.close();
 
-    remove("Bank_acc.dat");
-    rename("Temp.dat","Bank_acc.dat");
-    cout<<"\n\nRecord Removed";
-}
 
-void display_slip(int n){
-    Bank_acc acc;
-    bool flag = false;
-    ifstream infile;
-    infile.open("Bank_acc.dat",ios::binary);
-    if(!infile){
-        cout<<"file could't be opend";
-        return;
-    }
-    cout<<"\n\tBalance info....";
-    while(infile.read(reinterpret_cast<char *> (&acc),sizeof(Bank_acc)))
-    {
-        if(acc.return_accNo() == n){
-            acc.Display_acc();
-            flag = true;
-        }
-    }
-    infile.close();
-    if(flag ==false){
-        cout<<"\n\n\tBank account number does not exist";
-    }
-}
