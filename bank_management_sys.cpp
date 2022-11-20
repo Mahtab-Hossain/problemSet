@@ -246,7 +246,18 @@ void rm_bank_acc(int n){
 }
 
 void money_depo_withdraw(int,int);
-void update_bank_acc(int);
+void update_bank_acc(int n){
+    bool found = false;
+    Bank_acc acc;
+    fstream file;
+    file.open("Bank_Acc.dat",ios::binary|ios::in|ios::out);
+    if(!file)
+    {
+        cout<<"File not found...press any key...";
+        return;
+    }
+    
+}
 
 
 
