@@ -255,9 +255,41 @@ void money_depo_withdraw(int n, int option){
         cout<<"file not found";
         return;
     }
-    while (!file.eof())
+    while (!file.eof()&& found==false)
     {
-        
+        file.read(reinterpret_cast<char *> (&acc),sizeof(Bank_acc));
+        if(acc.return_accNo()==n){
+            acc.Display_acc();
+            if(option==1){
+                cout<<"\n\tMoney dioposits and total amount";
+                cout<<"\n\n\tenter amount to deposit";
+                cin>>amount;
+                acc.depo(amount);
+            }
+            if(option==2){
+                cout<<"\n\n\tWithdraw all money";
+                cout<<"\n\n\tenter amount to withdraw: ";
+                cin>>amount;
+                int bal=acc.return_deposit()-amount;
+                if(bal<0){
+                    cout<<"you are broke";
+                }
+                else{
+                    acc.withDraw(amount);
+                }
+                int pos;
+                pos=(-1)*static_cast<int>(sizeof(acc));
+                file.seekp(pos,ios::cur);
+                file.write(reinterpret_cast<char*>(&acc),sizeof(Bank_acc));
+                cout<<"\n\n\tRecord updated";
+                found=true;
+            }
+
+        }
+        file.close();
+        if(found==false){
+            cout<<"\n\n\tRecord not found";
+        }
     }
     
 }
