@@ -256,7 +256,14 @@ void update_bank_acc(int n){
         cout<<"File not found...press any key...";
         return;
     }
-    
+    while(!file.eof()&&found==false){
+        file.read(reinterpret_cast<char *>(&acc),sizeof(Bank_acc));
+        if(acc.return_accNo==n)
+        {
+            acc.Display_acc();
+            cout<<"\n\n\tenter the new details of the "
+        }
+    }
 }
 
 
