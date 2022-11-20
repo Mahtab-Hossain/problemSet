@@ -245,7 +245,22 @@ void rm_bank_acc(int n){
     cout<<"\n\nRecord Removed";
 }
 
-void money_depo_withdraw(int,int);
+void money_depo_withdraw(int n, int option){
+    int amount;
+    bool found = false;
+    Bank_acc acc;
+    fstream file;
+    file.open("Bank_Acc.dat",ios::binary|ios::in|ios::out);
+    if(!file){
+        cout<<"file not found";
+        return;
+    }
+    while (!file.eof())
+    {
+        
+    }
+    
+}
 void update_bank_acc(int n){
     bool found = false;
     Bank_acc acc;
