@@ -175,8 +175,26 @@ void create_bank_acc(){
     outfile.write(reinterpret_cast<char *>(&acc),sizeof(Bank_acc));
     outfile.close();
 }
-void display_slip(int);
-void display_all();
+
+void display_all(){
+    system("CLS");
+    Bank_acc acc;
+    ifstream infile;
+    infile.open("Bank_Acc.dat",ios::binary);
+    if(!infile){
+        cout<<"File not found...press any key";
+        return;
+    }
+    cout<<"\n\tBank account holders name..\n\n";
+    cout<<"---------------------\n";
+    cout<<"Account No,\tName,\tBalance Type\n";
+    cout<<"---------------------\n";
+    while (infile.read(reint))
+    {
+        /* code */
+    }
+    
+}
 
 void display_slip(int n){
     Bank_acc acc;
