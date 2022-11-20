@@ -189,10 +189,11 @@ void display_all(){
     cout<<"---------------------\n";
     cout<<"Account No,\tName,\tBalance Type\n";
     cout<<"---------------------\n";
-    while (infile.read(reint))
+    while(infile.read(reinterpret_cast<char*> (&acc),sizeof(Bank_acc)))
     {
-        /* code */
+        acc.report();
     }
+    infile.close();
     
 }
 
