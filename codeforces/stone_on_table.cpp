@@ -12,9 +12,9 @@ int main(){
     string s;
     cin>>s;
     //erase function removes elements from a container from the specified position or rage
-    s.erase(unique(s.begin(),s.end(),s.end()));
-    string st;
-    st= nos -s.length();
-    cout<<st<<endl;
+    s.erase(unique(s.begin(),s.end()),s.end());
+    // string st;
+    // st= nos -s.length();
+    cout<<nos-s.length()<<endl;
     return 0;
 }
